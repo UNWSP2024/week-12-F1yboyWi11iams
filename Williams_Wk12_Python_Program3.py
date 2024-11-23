@@ -20,7 +20,7 @@ class MyGUI:
 
         self.radio_var = tkinter.DoubleVar()
 
-        self.radio_var.set(11)
+        self.radio_var.set(0)
 
         self.rb1 = tkinter.Radiobutton(self.top_frame,
                                        text='Daytime (6:00 A.M. through 5:59 P.M): $0.02',
