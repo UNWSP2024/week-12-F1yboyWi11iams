@@ -37,32 +37,25 @@ class MyGUI:
 
         self.cb1 = tkinter.Checkbutton(self.top_frame,
                                        text='Oil Change - $30.00',
-                                       variable=self.cb_var1,
-                                       command=self.show_choice)
+                                       variable=self.cb_var1)
         self.cb2 = tkinter.Checkbutton(self.top_frame,
                                        text='Lube Job - $20.00',
-                                       variable=self.cb_var1,
-                                       command=self.show_choice)
+                                       variable=self.cb_var2)
         self.cb3 = tkinter.Checkbutton(self.top_frame,
                                        text='Radiator Flush - $40.00',
-                                       variable=self.cb_var1,
-                                       command=self.show_choice)
+                                       variable=self.cb_var3)
         self.cb4 = tkinter.Checkbutton(self.top_frame,
                                        text='Transmission Fluid - $100.00',
-                                       variable=self.cb_var1,
-                                       command=self.show_choice)
+                                       variable=self.cb_var4)
         self.cb5 = tkinter.Checkbutton(self.top_frame,
                                        text='Inspection - $35.00',
-                                       variable=self.cb_var1,
-                                       command=self.show_choice)
+                                       variable=self.cb_var5)
         self.cb6 = tkinter.Checkbutton(self.top_frame,
                                        text='Muffler replacement - $200.00',
-                                       variable=self.cb_var1,
-                                       command=self.show_choice)
+                                       variable=self.cb_var6)
         self.cb7 = tkinter.Checkbutton(self.top_frame,
                                        text='Tire Rotation - $20.00',
-                                       variable=self.cb_var1,
-                                       command=self.show_choice)
+                                       variable=self.cb_var7)
 
         self.cb1.pack()
         self.cb2.pack()
@@ -89,23 +82,21 @@ class MyGUI:
 
     def show_choice(self):
         total = 0
-        if self.var1.get() == 1:
+        if self.cb_var1.get() == 1:
             total += 30
-        if self.var2.get() == 1:
+        if self.cb_var2.get() == 1:
             total += 20
-        if self.var3.get() == 1:
+        if self.cb_var3.get() == 1:
             total += 40
-        if self.var4.get() == 1:
+        if self.cb_var4.get() == 1:
             total += 100
-        if self.var5.get() == 1:
+        if self.cb_var5.get() == 1:
             total += 35
-        if self.var6.get() == 1:
+        if self.cb_var6.get() == 1:
             total += 200
-        if self.var7.get() == 1:
+        if self.cb_var7.get() == 1:
             total += 20
         self.message = f"Your total: ${total}"
-
-        self.message.pack()
 
         tkinter.messagebox.showinfo('Total Charges', self.message)
 
