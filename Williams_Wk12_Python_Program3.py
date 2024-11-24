@@ -39,7 +39,7 @@ class MyGUI:
         self.rb2.pack()
         self.rb3.pack()
 
-        self.time_entry = tkinter.StringVar
+        self.time_entry = tkinter.DoubleVar
         self.time_label = tkinter.Label(self.mid_frame,
                                           text='Enter the total call time in minutes:')
         self.time_entry = tkinter.Entry(self.mid_frame,
