@@ -67,7 +67,8 @@ class MyGUI:
     def calc_charges(self):
         total = 0
         print(self.radio_var.get())
-        total = self.time_entry.get() * self.radio_var.get()
+        print(self.time_entry.get())
+        total = float(self.time_entry.get()) * self.radio_var.get()
         # if self.rb1.get() == 1:
         #     total = self.time_entry * 0.02
         # if self.rb2.get() == 1:
@@ -76,5 +77,10 @@ class MyGUI:
         #     total = self.time_entry * 0.05
         tkinter.messagebox.showinfo('Total Charges',f'Your charges: ${total}')
 
+if __name__ == '__main__':
+    my_gui = MyGUI()
+    
+    # Instructor aide involved in following steps:
+    # float(self.time_entry.get()), print(self.time_entry.get())
 if __name__ == '__main__':
     my_gui = MyGUI()
