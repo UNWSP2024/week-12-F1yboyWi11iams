@@ -39,19 +39,18 @@ class MyGUI:
         self.rb2.pack()
         self.rb3.pack()
 
-        self.prompt_label = tkinter.Label(self.mid_frame,
+        self.time_entry = tkinter.DoubleVar
+        self.time_label = tkinter.Label(self.mid_frame,
                                           text='Enter the total call time in minutes:')
         self.time_entry = tkinter.Entry(self.mid_frame,
-                                        width = 10)
-
-        self.prompt_label.pack(side='left')
+                                        width = 10,
+                                        textvariable=self.time_entry)
+        self.time_label.pack(side='left')
         self.time_entry.pack(side='left')
-
-        self.value = tkinter.StringVar()
 
         self.get_price_button = tkinter.Button(self.bottom_frame,
                                         text='Click for Charges',
-                                        command=self.show_choice)
+                                        command=self.calc_charges)
         self.quit_button = tkinter.Button(self.bottom_frame,
                                           text='Quit',
                                           command=self.main_window.destroy)
@@ -65,17 +64,18 @@ class MyGUI:
 
         tkinter.mainloop()
 
-    def show_choice(self):
+    def calc_charges(self):
         total = 0
         print(self.radio_var.get())
-        total = self.time_entry * self.radio_var.get()
+        print(self.time_entry.get())
+        total = float(self.time_entry.get()) * self.radio_var.get()
         # if self.rb1.get() == 1:
         #     total = self.time_entry * 0.02
         # if self.rb2.get() == 1:
         #     total = self.time_entry * 0.12
         # if self.rb3.get() == 1:
         #     total = self.time_entry * 0.05
-        tkinter.messagebox.showinfo('Selection',f'Your charges: ${total}')
+        tkinter.messagebox.showinfo('Total Charges',f'Your charges: ${total}')
 
 if __name__ == '__main__':
     my_gui = MyGUI()
