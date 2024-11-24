@@ -39,15 +39,15 @@ class MyGUI:
         self.rb2.pack()
         self.rb3.pack()
 
+        self.time_entry = tkinter.StringVar
         self.time_label = tkinter.Label(self.mid_frame,
                                           text='Enter the total call time in minutes:')
         self.time_entry = tkinter.Entry(self.mid_frame,
-                                        width = 10)
+                                        width = 10,
+                                        textvariable=self.time_entry)
 
         self.time_label.pack(side='left')
         self.time_entry.pack(side='left')
-
-        self.value = tkinter.StringVar()
 
         self.get_price_button = tkinter.Button(self.bottom_frame,
                                         text='Click for Charges',
@@ -66,7 +66,7 @@ class MyGUI:
         tkinter.mainloop()
 
     def calc_charges(self):
-        total = self.time_entry * self.radio_var.get()
+        total = 0
         print(self.radio_var.get())
         if self.rb1.get() == 1:
             total = self.time_entry * 0.02
