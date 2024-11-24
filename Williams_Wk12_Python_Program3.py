@@ -43,9 +43,7 @@ class MyGUI:
         self.time_label = tkinter.Label(self.mid_frame,
                                           text='Enter the total call time in minutes:')
         self.time_entry = tkinter.Entry(self.mid_frame,
-                                        width = 10,
-                                        textvariable=self.time_entry)
-
+                                        width = 10)
         self.time_label.pack(side='left')
         self.time_entry.pack(side='left')
 
@@ -68,12 +66,13 @@ class MyGUI:
     def calc_charges(self):
         total = 0
         print(self.radio_var.get())
-        if self.rb1.get() == 1:
-            total = self.time_entry * 0.02
-        if self.rb2.get() == 1:
-            total = self.time_entry * 0.12
-        if self.rb3.get() == 1:
-            total = self.time_entry * 0.05
+        total = self.time_entry * self.radio_var.get()
+        # if self.rb1.get() == 1:
+        #     total = self.time_entry * 0.02
+        # if self.rb2.get() == 1:
+        #     total = self.time_entry * 0.12
+        # if self.rb3.get() == 1:
+        #     total = self.time_entry * 0.05
         tkinter.messagebox.showinfo('Total Charges',f'Your charges: ${total}')
 
 if __name__ == '__main__':
