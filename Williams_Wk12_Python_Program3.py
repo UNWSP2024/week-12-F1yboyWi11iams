@@ -67,7 +67,7 @@ class MyGUI:
     def calc_charges(self):
         total = 0
         print(self.radio_var.get())
-        total = self.time_value.get() * self.radio_var.get()
+        total = self.time_entry.get() * self.radio_var.get()
         # if self.rb1.get() == 1:
         #     total = self.time_entry * 0.02
         # if self.rb2.get() == 1:
