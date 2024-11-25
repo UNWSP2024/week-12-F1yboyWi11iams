@@ -25,15 +25,15 @@ class MyGUI:
         self.rb1 = tkinter.Radiobutton(self.top_frame,
                                        text='Daytime (6:00 A.M. through 5:59 P.M): $0.02',
                                        variable=self.radio_var,
-                                       value=1)
+                                       value=0.02)
         self.rb2 = tkinter.Radiobutton(self.top_frame,
                                        text='Evening (6:00 P.M.  through 11:59 P.M.): $0.12',
                                        variable=self.radio_var,
-                                       value=2)
+                                       value=0.12)
         self.rb3 = tkinter.Radiobutton(self.top_frame,
                                        text='Off-Peak (midnight through 5:59 P.M.): $0.05',
                                        variable=self.radio_var,
-                                       value=3)
+                                       value=0.05)
 
         self.rb1.pack()
         self.rb2.pack()
